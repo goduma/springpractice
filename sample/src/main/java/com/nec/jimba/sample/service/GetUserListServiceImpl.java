@@ -24,8 +24,20 @@ public class GetUserListServiceImpl implements GetUserListService {
 }
 	@Override
 	public void insertUserList() {
+		User user = new User();
 	
-		userMapper.insert();//mapperの呼び出し
+		userMapper.insert(user);//mapperの呼び出し
 	
 }
+	@Override
+	public void insertCurl(User user) {
+		
+		userMapper.insert(user);//mapperの呼び出し
+		
+	}
+	@Override
+	public void updateCurl(User user) {
+		userMapper.update(user);//mapperの呼び出し
+		
+	}
 }

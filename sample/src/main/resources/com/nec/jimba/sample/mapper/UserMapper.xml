@@ -6,7 +6,22 @@
     <select id="selectAll" resultType="com.nec.jimba.sample.domain.User">
         SELECT * FROM users
     </select>
-    <insert id="insert">
-    	Insert Into users values (4,'imai',48)
+    <insert id="insert" parameterType="com.nec.jimba.sample.domain.User">
+    	Insert Into users 
+    	values (
+    	#{id},
+    	#{name},
+    	#{age}
+    	)
     </insert>
+    <update id="update" parameterType="com.nec.jimba.sample.domain.User">
+    UPDATE users 
+    SET 
+    	
+    	name=#{name},
+    	age=#{age}
+    WHERE
+    	id=#{id}
+    	
+    </update>
 </mapper>

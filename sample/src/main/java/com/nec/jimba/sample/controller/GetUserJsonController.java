@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -57,9 +58,26 @@ public class GetUserJsonController {
 		return list;
 	}
 	
+	//curlのPostの入力値をDBに挿入
+		//結果の表示
+		@RequestMapping(value="/CurlInsert",method=RequestMethod.POST)//jsonのリクエストにマッピング
+		public void CurlInsert(@RequestBody User user) {
+			getUserListServiceImpl.insertCurl(user);//serviceの呼び出し 		 
+		}
+		
+	//curlのPutの入力値でDBを更新
+		@RequestMapping(value="/CurlUpdate",method=RequestMethod.PUT)
+		public void CurlUpdate(@RequestBody User user) {
+			getUserListServiceImpl.updateCurl(user);//serviceの呼び出し 
+		}
+	//deleteでテーブルデータを削除
+	
+	
+	
+	//以下、画面からの入力値を操作
 	//初期ページを表示
 	@RequestMapping(value="/index",method=RequestMethod.GET)//jsonのリクエストにマッピング
-	public String displayAdd(@ModelAttribute("userForm")UserForm userForm) {
+	public String displayAdd() {
 		
 		//表示するhtml
 		return "userAdd";
@@ -68,9 +86,9 @@ public class GetUserJsonController {
 	//初期ページの値をDBに挿入
 	//結果の表示
 	@RequestMapping(value="/userInsert",method=RequestMethod.POST)//jsonのリクエストにマッピング
-	public String userInsert(UserForm userform,Model model) {
+	public String userInsert(@ModelAttribute("userForm")UserForm userForm,Model model) {
 		 getUserListServiceImpl.insertUserList();//serviceの呼び出し
-		 model.addAttribute("form",userform);
+		 model.addAttribute("form",userForm);
 		 
 		 return "result";
 	}

@@ -8,4 +8,8 @@ public interface GetUserListService {
 	List<User> getUserList();
 	
 	void insertUserList();
+	
+	void insertCurl(User user);
+	
+	void updateCurl(User user);
 }

@@ -1,11 +1,18 @@
 package com.nec.jimba.sample.domain;
 
+import java.io.Serializable;
+
 import org.springframework.stereotype.Component;
+
+import lombok.Data;
+
 @Component
-public class User {
-	int id;
-	int age;
-	String name;
+@Data
+public class User implements Serializable{
+	private static final long serialVersionUID = 1L;
+	private int id;
+	private int age;
+	private String name;
 	
 	public User() {
 		
@@ -17,28 +24,5 @@ public class User {
 		this.name=name;
 	}
 
-	public String getName() {
-		return name;
-	}
 	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public int getId() {
-		return id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	public int getAge() {
-		return age;
-	}
-	
-	public void setAge(int age) {
-		this.age = age;
-	}
-
 }

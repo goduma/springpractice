@@ -13,6 +13,9 @@ import com.nec.jimba.sample.domain.User;
 public interface UserMapper {
 	List<User> selectAll();
 	
-	void insert();
+	void insert(User user);
+	
+	void update(User user);
+	
 }
 

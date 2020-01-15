@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>spring sample</title>
+</head>
+<body>
+	<h1>処理結果</h1>
+	<div th:object="${userForm}">
+    <label>id</label><br>
+	<span th:number="*{id}"></span><br>
+	<label>name</label><br>
+	<span th:text="*{name}"></span><br>
+	<label>age</label><br>
+	<span th:number="*{age}"></span><br>
+	<p>上記を登録しました。</p>
+	</div>
+</body>
+</html>
