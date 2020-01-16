@@ -7,9 +7,13 @@ public interface GetUserListService {
 	
 	List<User> getUserList();
 	
+	List<User> SelectCurl(int tempId);
+	
 	void insertUserList();
 	
 	void insertCurl(User user);
 	
 	void updateCurl(User user);
+
+
 }

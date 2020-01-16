@@ -23,6 +23,14 @@ public class GetUserListServiceImpl implements GetUserListService {
 	return list;
 }
 	@Override
+	public List<User> SelectCurl(int tempId) {
+		List<User> list = userMapper.selectId(tempId);
+		
+		return list;
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
 	public void insertUserList() {
 		User user = new User();
 	
@@ -40,4 +48,5 @@ public class GetUserListServiceImpl implements GetUserListService {
 		userMapper.update(user);//mapperの呼び出し
 		
 	}
+	
 }
