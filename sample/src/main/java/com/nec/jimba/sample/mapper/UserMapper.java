@@ -18,6 +18,8 @@ public interface UserMapper {
 	void update(User user);
 
 	List<User> selectId(int tempId);
+
+	void delete();
 	
 }
 

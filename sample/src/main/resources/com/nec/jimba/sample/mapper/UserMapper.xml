@@ -31,4 +31,9 @@
     	id=#{id}
     	
     </update>
+    <delete id="delete">
+    	DELETE 
+    	FROM users
+    </delete>
+    
 </mapper>

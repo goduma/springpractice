@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.nec.jimba.sample.domain.SampleException;
 import com.nec.jimba.sample.domain.User;
 import com.nec.jimba.sample.mapper.UserMapper;
 
@@ -38,14 +39,21 @@ public class GetUserListServiceImpl implements GetUserListService {
 	
 }
 	@Override
-	public void insertCurl(User user) {
-		
-		userMapper.insert(user);//mapperの呼び出し
-		
+	public void insertCurl(User user) throws SampleException {
+			if(user.getName().trim()=="")
+				throw new SampleException(400,"nameが未入力です。");
+			else
+				userMapper.insert(user);//mapperの呼び出し
 	}
 	@Override
 	public void updateCurl(User user) {
 		userMapper.update(user);//mapperの呼び出し
+		
+	}
+	@Override
+	public void deleteCurl() {
+		userMapper.delete();
+		// TODO Auto-generated method stub
 		
 	}
 	
