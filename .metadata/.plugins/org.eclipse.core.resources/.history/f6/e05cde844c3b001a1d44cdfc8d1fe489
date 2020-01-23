@@ -1,0 +1,15 @@
+package com.nec.jimba.sample.domain;
+
+import org.springframework.http.HttpStatus;
+
+public class SampleException extends Exception {
+    private static final long serialVersionUID = 1L;
+    private HttpStatus code;
+    public SampleException(HttpStatus code, String message) {
+        super(message);
+        this.code = code;
+    }
+    public HttpStatus getCode() {
+        return code;
+    }
+}

@@ -1,0 +1,8 @@
+package com.nec.jimba.sample.form;
+
+import lombok.Data;
+
+@Data
+public class UserForm {
+
+}

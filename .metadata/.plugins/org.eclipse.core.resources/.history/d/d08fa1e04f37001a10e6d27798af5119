@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>spring sample</title>
+</head>
+<body>
+	<h1>処理結果</h1>
+	<div th:object="${userForm}"></div>
+    <label>id</label>
+	<span th:></span>
+	
+</body>
+</html>

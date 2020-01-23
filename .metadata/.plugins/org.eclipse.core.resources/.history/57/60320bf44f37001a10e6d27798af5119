@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>spring sample</title>
+</head>
+<body>
+	<h1>処理結果</h1>
+	<div th:object="${userForm}"></div>
+    <label>id</label>
+	<span th:number="*{id}"></span>
+	<label>name</label>
+	<span th:text="*{name}"></span>
+	<label>age</label>
+	<span th:number="*{age}"></span>
+	
+</body>
+</html>
